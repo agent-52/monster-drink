@@ -1,0 +1,11 @@
+Model Information:
+* title:	Monster Energy
+* source:	https://sketchfab.com/3d-models/monster-energy-a0e62901bf42453c84c05c723fc3cee9
+* author:	Raph3D (https://sketchfab.com/anndaniau)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Monster Energy" (https://sketchfab.com/3d-models/monster-energy-a0e62901bf42453c84c05c723fc3cee9) by Raph3D (https://sketchfab.com/anndaniau) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
