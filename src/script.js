@@ -10,6 +10,40 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+gsap.to(".p1MainText", {
+    xPercent: -8,
+    
+    scrollTrigger:{
+        scrub:2,
+        trigger:".page1",
+        markers: true,
+        start:"10% 10%",
+        end:"bottom top"
+    }
+})
+gsap.to(".p21,.p23", {
+    xPercent: 6,
+    
+    scrollTrigger:{
+        scrub:2,
+        trigger:".page1",
+        markers: true,
+        start:"10% 10%",
+        end:"bottom top"
+    }
+})
+gsap.to(".p22", {
+    xPercent: -3,
+    
+    scrollTrigger:{
+        scrub:2,
+        trigger:".page1",
+        markers: true,
+        start:"10% 10%",
+        end:"bottom top"
+    }
+})
+
 /**
  * Base
  */
@@ -29,7 +63,7 @@ const dracoLoader = new DRACOLoader()
 dracoLoader.setDecoderPath("/draco/")
 const gltfLoader = new GLTFLoader()
 gltfLoader.setDRACOLoader(dracoLoader)
-let can;
+
 let mixer = null
 gltfLoader.load(
     "/model/6/scene.gltf",
@@ -47,7 +81,7 @@ gltfLoader.load(
 
         // gltf.scene.scale.set(12.25, 12.25, 12.25)
         // gltf.scene.scale.set(0.08,0.08,0.08)
-        can = gltf.scene.rotation.y
+        const can1 = gltf.scene
         gltf.scene.scale.set(0.65,0.65,0.65)
         gltf.scene.position.y = -1.2
         gltf.scene.rotation.y = Math.PI*0.5
@@ -55,10 +89,109 @@ gltfLoader.load(
         gltf.scene.rotation.z = Math.PI*0.1
         gltf.scene.camera
         scene.add(gltf.scene)
+
+        gsap.to(can1.position, {
+            y: -4.5,
+            x: -2,
+            scrollTrigger:{
+                scrub:1.5,
+                trigger:".page1",
+                markers: true,
+                start:"10% 10%",
+                end:"bottom top"
+            }
+        })
+        gsap.to(can1.rotation, {
+            y: Math.PI*2.5,
+            z: -Math.PI*0.04,
+            x: Math.PI*0.00,
+            scrollTrigger:{
+                scrub:1.5,
+                trigger:".page1",
+                markers: true,
+                start:"10% 10%",
+                end:"bottom top"
+            }
+        })
+        gsap.to(can1.scale, {
+            y: 1,
+            z: 1,
+            x: 1,
+            
+            scrollTrigger:{
+                scrub:1.5,
+                trigger:".page1",
+                markers: true,
+                start:"10% 10%",
+                end:"bottom top"
+            }
+        })
+
         
     }
 )
+gltfLoader.load(
+    "/model/6/scene.gltf",
+    (gltf) => 
+    {
+        // mixer = new THREE.AnimationMixer(gltf.scene)
+        // const action = mixer.clipAction(gltf.animations[0])
+        // const action1 = mixer.clipAction(gltf.animations[1])
+        // const action2 = mixer.clipAction(gltf.animations[2])
+        // action.play()
+        // action1.play()
+        // action2.play()
+        console.log(gltf)
+        // console.log(action)
 
+        // gltf.scene.scale.set(12.25, 12.25, 12.25)
+        // gltf.scene.scale.set(0.08,0.08,0.08)
+        const can2 = gltf.scene
+        gltf.scene.scale.set(0.6,0.6,0.6)
+        gltf.scene.position.y = -1
+        gltf.scene.position.x = -1
+        gltf.scene.rotation.y = Math.PI*0.5
+        gltf.scene.rotation.x = Math.PI*0.16
+        gltf.scene.rotation.z = -Math.PI*0.1
+        gltf.scene.camera
+        scene.add(gltf.scene)
+
+        gsap.to(can2.position, {
+            y: 4,
+            scrollTrigger:{
+                scrub:1.5,
+                trigger:".page1",
+                markers: true,
+                start:"10% 10%",
+                end:"bottom top"
+            }
+        })
+        gsap.to(can2.rotation, {
+            y: Math.PI*2,
+            z: Math.PI*0.2,
+            scrollTrigger:{
+                scrub:1.5,
+                trigger:".page1",
+                markers: true,
+                start:"10% 10%",
+                end:"bottom top"
+            }
+        })
+        gsap.to(can2.scale, {
+            y: 0.3,
+            z: 0.4,
+            
+            scrollTrigger:{
+                scrub:1.5,
+                trigger:".page1",
+                markers: true,
+                start:"10% 10%",
+                end:"bottom top"
+            }
+        })
+        
+    }
+)
 
 /**
  * Floor
@@ -111,7 +244,7 @@ directionalLight2.shadow.camera.left = - 7
 directionalLight2.shadow.camera.top = 7
 directionalLight2.shadow.camera.right = 7
 directionalLight2.shadow.camera.bottom = - 7
-directionalLight2.position.set( 5, -5, 0)
+directionalLight2.position.set( 5, 0, 0)
 scene.add(directionalLight2)
 
 const hemiLight = new THREE.HemisphereLight("white", "white", 1)
@@ -180,7 +313,7 @@ const tick = () =>
     previousTime = elapsedTime
 
     //update can
-
+    
     
 
     //Update mixer

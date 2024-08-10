@@ -83,6 +83,12 @@ body{
 .bgG{
   background-color: var(--green);
 }
+.bgLg{
+  background-color: var(--lightGreen);
+}
+.bgDg{
+  background-color: var(--darkGreen);
+}
 .cG{
   color: var(--green);
 }
@@ -124,8 +130,9 @@ body{
 }
 
 .tryButton{
-  background-color: var(--green);
+  background-image: linear-gradient(to right, var(--lightGreen) , var(--darkGreen));
   color: black;
+  color: white;
   font-weight: bold;
   font-size: 2rem;
   padding: 1rem 3rem;
@@ -133,4 +140,28 @@ body{
   border-bottom-left-radius: 999px;
   width: fit-content;
   height: min-content;
+}
+
+/**/
+.page2{
+  /* background-image: linear-gradient( black , var(--lightGreen)); */
+  background-color: black;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.p2Main{
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient( var(--lightGreen) , black); */
+  font-size: 7rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 6rem;
+  color: #6acd0c;
+  /* border: 2px solid red; */
+  
+  margin-left: 3rem;
+  
+  
+  /* color: white; */
 }
