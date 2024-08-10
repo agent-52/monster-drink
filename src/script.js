@@ -127,6 +127,21 @@ gltfLoader.load(
                 end:"bottom top"
             }
         })
+        gsap.fromTo(can1.position,{y: -4.5,
+            x: -2,},
+             {
+            y: 6,
+            // z: 0,
+            // x: 0,
+            
+            scrollTrigger:{
+                scrub:1,
+                trigger:".page3",
+                // markers: true,
+                start:"top top",
+                end:"bottom top"
+            }
+        })
 
         //
 
@@ -330,10 +345,11 @@ gsap.to(camera.rotation, {
         end:"bottom top"
     }
 })
-gsap.to(".p3Image", {
+gsap.from(".p3Image", {
     
     
-    rotate: 3,
+    yPercent: 100,
+    
     
     
     scrollTrigger:{
@@ -344,6 +360,22 @@ gsap.to(".p3Image", {
         end:"bottom top"
     }
 })
+gsap.to(".p3Image", {
+    
+    
+    rotate: 3,
+    
+    
+    
+    scrollTrigger:{
+        scrub:1.5,
+        trigger:".page2",
+        // markers: true,
+        start:"top top",
+        end:"bottom top"
+    }
+})
+
 
 // Controls
 const controls = new OrbitControls(camera, canvas)

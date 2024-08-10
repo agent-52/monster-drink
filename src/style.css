@@ -110,7 +110,7 @@ body{
   color: white;
 }
 .textX{
-  font-size: 26rem;
+  font-size: 24rem;
 }
 .fontB{
   font-weight: bold;
@@ -128,7 +128,7 @@ body{
   letter-spacing: -1rem;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, var(--lightGreen) , var(--darkGreen));
+  background-image: linear-gradient( var(--lightGreen) , var(--darkGreen));
 }
 .maxW50Ch{
   max-width: 50ch;
@@ -163,13 +163,19 @@ body{
   text-transform: uppercase;
   font-weight: bold;
   line-height: 6rem;
-  color: #6acd0c;
+  /* color: #6acd0c; */
+  
   /* border: 2px solid red; */
   
   margin-left: 3rem;
   
   
   /* color: white; */
+}
+.p2Main>div{
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient( var(--lightGreen) , var(--darkGreen));
 }
 
 .circle{
@@ -213,8 +219,11 @@ body{
   text-transform: uppercase;
   font-weight: bold;
   line-height: 6rem;
-  color: #6acd0c;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient( var(--lightGreen) , var(--darkGreen));
   text-align: center;
+  padding-top: 1rem;
   
   left: 50%;
   transform: translateX(-50%) ;
@@ -250,4 +259,15 @@ header img{
 }
 .logoBox{
   width: 50px;
+}
+.videoContainer{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+video{
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
 }
