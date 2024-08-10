@@ -16,7 +16,7 @@ gsap.to(".p1MainText", {
     scrollTrigger:{
         scrub:2,
         trigger:".page1",
-        markers: true,
+        // markers: true,
         start:"10% 10%",
         end:"bottom top"
     }
@@ -27,7 +27,7 @@ gsap.to(".p21,.p23", {
     scrollTrigger:{
         scrub:2,
         trigger:".page1",
-        markers: true,
+        // markers: true,
         start:"10% 10%",
         end:"bottom top"
     }
@@ -38,7 +38,7 @@ gsap.to(".p22", {
     scrollTrigger:{
         scrub:2,
         trigger:".page1",
-        markers: true,
+        // markers: true,
         start:"10% 10%",
         end:"bottom top"
     }
@@ -89,6 +89,7 @@ gltfLoader.load(
         gltf.scene.rotation.z = Math.PI*0.1
         gltf.scene.camera
         scene.add(gltf.scene)
+        
 
         gsap.to(can1.position, {
             y: -4.5,
@@ -96,7 +97,7 @@ gltfLoader.load(
             scrollTrigger:{
                 scrub:1.5,
                 trigger:".page1",
-                markers: true,
+                // markers: true,
                 start:"10% 10%",
                 end:"bottom top"
             }
@@ -108,7 +109,7 @@ gltfLoader.load(
             scrollTrigger:{
                 scrub:1.5,
                 trigger:".page1",
-                markers: true,
+                // markers: true,
                 start:"10% 10%",
                 end:"bottom top"
             }
@@ -121,11 +122,28 @@ gltfLoader.load(
             scrollTrigger:{
                 scrub:1.5,
                 trigger:".page1",
-                markers: true,
+                // markers: true,
                 start:"10% 10%",
                 end:"bottom top"
             }
         })
+
+        //
+
+        // gsap.fromTo(can1.rotation,{y: Math.PI*2.5,
+        //     z: -Math.PI*0.04,
+        //     x: Math.PI*0.00,}, {
+        //     y: Math.PI*3.5,
+            
+        //     scrollTrigger:{
+        //         scrub:1.5,
+        //         trigger:".page2",
+        //         // markers: true,
+        //         start:"10% 10%",
+        //         end:"bottom top"
+        //     }
+        // })
+        
 
         
     }
@@ -161,7 +179,7 @@ gltfLoader.load(
             scrollTrigger:{
                 scrub:1.5,
                 trigger:".page1",
-                markers: true,
+                // markers: true,
                 start:"10% 10%",
                 end:"bottom top"
             }
@@ -172,7 +190,7 @@ gltfLoader.load(
             scrollTrigger:{
                 scrub:1.5,
                 trigger:".page1",
-                markers: true,
+                // markers: true,
                 start:"10% 10%",
                 end:"bottom top"
             }
@@ -184,7 +202,7 @@ gltfLoader.load(
             scrollTrigger:{
                 scrub:1.5,
                 trigger:".page1",
-                markers: true,
+                // markers: true,
                 start:"10% 10%",
                 end:"bottom top"
             }
@@ -192,6 +210,7 @@ gltfLoader.load(
         
     }
 )
+
 
 /**
  * Floor
@@ -211,10 +230,10 @@ gltfLoader.load(
 /**
  * Lights
  */
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.8)
+const ambientLight = new THREE.AmbientLight(0xffffff, 1)
 scene.add(ambientLight)
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8)
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
 directionalLight.castShadow = true
 directionalLight.shadow.mapSize.set(1024, 1024)
 directionalLight.shadow.camera.far = 15
@@ -225,7 +244,7 @@ directionalLight.shadow.camera.bottom = - 7
 directionalLight.position.set(- 5, 0, 0)
 scene.add(directionalLight)
 
-const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.8)
+const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1)
 directionalLight1.castShadow = true
 directionalLight1.shadow.mapSize.set(1024, 1024)
 directionalLight1.shadow.camera.far = 15
@@ -236,7 +255,7 @@ directionalLight1.shadow.camera.bottom = - 7
 directionalLight1.position.set( 5, 2, 0)
 scene.add(directionalLight1)
 
-const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.1)
+const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1)
 directionalLight2.castShadow = true
 directionalLight2.shadow.mapSize.set(1024, 1024)
 directionalLight2.shadow.camera.far = 15
@@ -281,6 +300,50 @@ window.addEventListener('resize', () =>
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.set(2, 2, 2)
 scene.add(camera)
+
+gsap.to(camera.position, {
+    
+    x: 3,
+    z: 1.5,
+    
+    
+    scrollTrigger:{
+        scrub:1.5,
+        trigger:".page2",
+        // markers: true,
+        start:"top top",
+        end:"bottom top"
+    }
+})
+gsap.to(camera.rotation, {
+    
+    
+    z: -Math.PI*0.2,
+    x: -Math.PI*0.2,
+    
+    
+    scrollTrigger:{
+        scrub:1.5,
+        trigger:".page2",
+        // markers: true,
+        start:"top top",
+        end:"bottom top"
+    }
+})
+gsap.to(".p3Image", {
+    
+    
+    rotate: 3,
+    
+    
+    scrollTrigger:{
+        scrub:1.5,
+        trigger:".page2",
+        // markers: true,
+        start:"top top",
+        end:"bottom top"
+    }
+})
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
